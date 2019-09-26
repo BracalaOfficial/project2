@@ -1,0 +1,25 @@
+#bc {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+aside {
+    width: 300px;
+    border-radius: 10px;
+    background-color: #fcba03;
+    padding: 15px;
+    height: 90%;
+    margin-bottom: 10px;
+    position: fixed;
+    display: block;
+    max-height: 300px;
+}
+
+.message {
+    max-width: 400px;
+    border-radius: 10px;
+    background-color: #ffecb8;
+    padding: 15px;
+    margin-top: 10px;
+}

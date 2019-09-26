@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block otherscript %}
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid" id="bc">
+    <aside>
+        {% for chatroom in chatrooms %}
+        <input type="button" class="btn cr" data-number="{{ chatrooms.index(chatroom) }}" value="#{{ chatroom.title }}" style="color: white; width: 100%; text-align: left;">
+        {% endfor %}
+        <form id="ncrf">
+            <input id="cncr" type="button" class="btn" value="+ Create new chat" name="ncrname" placeholder="Enter chat's name" style="color: white; width: 100%; text-align: left;">
+        </form>
+    </aside>
+    <div class="container-fluid" style="margin-left: 300px;">
+        <h3 id="crtitle"></h3>
+        <div class="conatiner-fluid" id="mc">
+            <!-- {% for message in chatrooms[roomnumber].messages %}
+            <div class="message">
+                <p><b>{{ message.user }}</b></p>
+                <p>{{ message.message }} <i>{{ message.time.time() }}</i></p>
+            </div>
+            {% endfor %} -->
+        </div>
+        <form id="nmsgf" style="padding: 15px;">
+            <div class="form-group" style="max-width: 300px; display: flex; flex-direction: row;">
+              <input autofocus type="text" class="form-control foe" id="nmsgtext"  placeholder="Enter message here" autocomplete="off">
+              <button type="submit" class="btn btn-primary foe" style="background-color: #fcba03; border-color: #fcba03; margin-left: 10px;">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
